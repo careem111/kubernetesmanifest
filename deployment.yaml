@@ -15,7 +15,7 @@ spec:
         app: flaskdemo
     spec:
       containers:
-      - image: careem785/argo-cd-test:latest
+      - image: careem785/argo-cd-test:6
         name: flaskdemo
 ---
 apiVersion: v1
