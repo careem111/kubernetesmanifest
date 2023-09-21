@@ -13,8 +13,8 @@ pipeline {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     withCredentials([usernamePassword(credentialsId: 'github', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
                         //def encodedPassword = URLEncoder.encode("$GIT_PASSWORD",'UTF-8')
-                        sh "git config user.email krm.mrt@gmail.com"
-                        sh "git config user.name careem111"
+                        sh "git config user.email <email>"
+                        sh "git config user.name <git username>"
                         //sh "git switch master"
                         sh "cat deployment.yaml"
                         sh "sed -i 's+careem785/argocdtest.*+careem785/argocdtest:${DOCKERTAG}+g' deployment.yaml"
